@@ -4,6 +4,7 @@ Firma Tankuj Levně vyvinula aplikaci, pomocí které se snaží lidem v této n
 
 
 # Business operace
-
+přidávání liků/disliků na záznamy, případně pokud by nějaký uživatel měl až moc dislikes, dostane nějaké omezení na přidávání záznamů (s tím se tedy pojí i kontrola, zda má v danou dobu povolení přidávat záznamy).
 
 # Dotaz nad rámec CRUD
+Vyfiltrování nejlevnějších čerpacích stanic, v daném období na dané lokaci.
