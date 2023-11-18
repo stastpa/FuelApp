@@ -1,24 +1,27 @@
 package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "Fuel")
+@Getter
+@Setter
 public class Fuel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_fuel")
-    Long id;
+    private Long id;
     @Column(name = "name")
-    String name;
+    private String name;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)
     @JoinColumn(name = "soldAtGasStation")
     GasStation soldAtGasStation;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "fuelRecords", targetEntity = Record.class, orphanRemoval = true)
-    @JoinColumn(name = "fuelRecords")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "fuelRated", targetEntity = Record.class, orphanRemoval = true)
     List<Record> fuelRecords;
 }
