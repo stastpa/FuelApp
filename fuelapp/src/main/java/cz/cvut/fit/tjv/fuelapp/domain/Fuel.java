@@ -22,4 +22,3 @@ public class Fuel {
     @JoinColumn(name = "fuelRecords")
     List<Record> fuelRecords;
 }
-

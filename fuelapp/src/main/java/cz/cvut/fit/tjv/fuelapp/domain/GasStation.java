@@ -31,4 +31,3 @@ public class GasStation {
     @JoinColumn(name = "fuelsSoldAtGasStation")
     List<Fuel> fuels;
 }
-
