@@ -1,6 +1,7 @@
 package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class Fuel {
     @Column(name = "id_fuel")
     private Long id;
     @Column(name = "name")
+    @NotBlank
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)

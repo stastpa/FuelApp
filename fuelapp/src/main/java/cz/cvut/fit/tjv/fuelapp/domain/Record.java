@@ -1,6 +1,7 @@
 package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,10 +16,13 @@ public class Record {
     @Column(name = "id_record")
     private Long id;
     @Column(name = "price")
+    @NotBlank
     private Float price;
     @Column(name = "date")
+    @NotBlank
     private Date date;
     @Column(name = "rating")
+    @NotBlank
     private Integer rating;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Fuel.class)
@@ -28,4 +32,8 @@ public class Record {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = AppUser.class)
     @JoinColumn(name = "userAuthor")
     AppUser userAuthor;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)
+    @JoinColumn(name = "gasStation")
+    GasStation gasStation;
 }

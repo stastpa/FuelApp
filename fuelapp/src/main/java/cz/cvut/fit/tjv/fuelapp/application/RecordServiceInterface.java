@@ -10,7 +10,7 @@ public interface RecordServiceInterface {
 
     public List<Record> getRecords();
 
-    public Record createRecord(Record record);
+    public Record createRecord(Record record) throws IllegalArgumentException;
 
     public Record updateRecord(Record record) throws IllegalArgumentException;
 

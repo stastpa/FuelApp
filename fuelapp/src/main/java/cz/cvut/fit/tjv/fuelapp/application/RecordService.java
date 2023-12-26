@@ -10,16 +10,17 @@ import java.util.List;
 
 @Service
 @Transactional
-public class RecordService implements RecordServiceInterface{
+public class RecordService implements RecordServiceInterface {
     private JPARecordRepository recordRepository;
 
     public RecordService(JPARecordRepository recordRepository){
+
         this.recordRepository = recordRepository;
     }
 
     @Override
     public Record getRecordById(Long id) throws EntityNotFoundException {
-        return recordRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Record with given id:" + id + " not found."));
+        return recordRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Record with given id: " + id + " not found!"));
     }
 
     @Override
@@ -38,11 +39,15 @@ public class RecordService implements RecordServiceInterface{
         {
             recordRepository.save(record);
         }
-        throw new IllegalArgumentException("Fuel with given id" + record.getId() + " does not exist.");
+        throw new IllegalArgumentException("Record with given id: " + record.getId() + " does not exist.");
     }
 
     @Override
     public void deleteRecord(Long id) throws EntityNotFoundException {
-
+        if(recordRepository.existsById(id))
+        {
+            recordRepository.deleteById(id);
+        }
+        throw new IllegalArgumentException("Record with given id: " + id + " does not exist.");
     }
 }
