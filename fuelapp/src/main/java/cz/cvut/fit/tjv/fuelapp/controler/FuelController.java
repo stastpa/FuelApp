@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rest/api/appUser")
-public class AppUserController {
+public class FuelController {
 
     private final AppUserServiceInterface appUserService;
     private final FuelServiceInterface fuelService;
@@ -25,10 +25,10 @@ public class AppUserController {
     private final RecordServiceInterface recordService;
     private final DTOConverter<AppUserDTO, AppUser> appUserDTOConverter;
     private final DTOConverter<FuelDTO, Fuel> fuelDTOConverter;
-    private final DTOConverter<GasStationDTO,GasStation> gasStationDTOConverter;
+    private final DTOConverter<GasStationDTO, GasStation> gasStationDTOConverter;
     private final DTOConverter<RecordDTO, Record> recordDTOConverter;
 
-    public AppUserController(AppUserServiceInterface appUserService, FuelServiceInterface fuelService, GasStationServiceInterface gasStationService, RecordServiceInterface recordService, DTOConverter<AppUserDTO, AppUser> appUserDTOConverter, DTOConverter<FuelDTO, Fuel> fuelDTOConverter, DTOConverter<GasStationDTO, GasStation> gasStationDTOConverter, DTOConverter<RecordDTO, Record> recordDTOConverter) {
+    public FuelController(AppUserServiceInterface appUserService, FuelServiceInterface fuelService, GasStationServiceInterface gasStationService, RecordServiceInterface recordService, DTOConverter<AppUserDTO, AppUser> appUserDTOConverter, DTOConverter<FuelDTO, Fuel> fuelDTOConverter, DTOConverter<GasStationDTO, GasStation> gasStationDTOConverter, DTOConverter<RecordDTO, Record> recordDTOConverter) {
         this.appUserService = appUserService;
         this.fuelService = fuelService;
         this.gasStationService = gasStationService;
@@ -40,34 +40,29 @@ public class AppUserController {
     }
 
     @GetMapping
-    public List<AppUserDTO> getAppUsers(){
-
-        return appUserService.getAppUsers().stream().map(appUserDTOConverter::toDTO).toList();
+    public List<FuelDTO> getFuels() {
+        return fuelService.getFuels().stream().map(fuelDTOConverter::toDTO).toList();
     }
 
     @GetMapping(path = "{id}")
-    public AppUserDTO getAppUser(@PathVariable("id") Long id)
-    {
-        return appUserDTOConverter.toDTO(appUserService.getAppUserById(id));
+    public FuelDTO getFuel(@PathVariable("id") Long id) {
+        return fuelDTOConverter.toDTO(fuelService.getFuelById(id));
     }
 
     @PostMapping
-    public AppUserDTO createAppUser(@RequestBody AppUserDTO au)
-    {
-        return appUserDTOConverter.toDTO(appUserService.createAppUser(appUserDTOConverter.toEntity(au)));
+    public FuelDTO createFuel(@RequestBody FuelDTO fuelDTO) {
+        return fuelDTOConverter.toDTO(fuelService.createFuel(fuelDTOConverter.toEntity(fuelDTO)));
     }
 
     @PutMapping(path = "{id}")
-    public AppUserDTO updateAppUser(@PathVariable Long id, @RequestBody AppUserDTO au)
-    {
-        AppUser entity = appUserDTOConverter.toEntity(au);
+    public FuelDTO updateFuel(@PathVariable Long id, @RequestBody FuelDTO fuelDTO) {
+        Fuel entity = fuelDTOConverter.toEntity(fuelDTO);
         entity.setId(id);
-        return appUserDTOConverter.toDTO(appUserService.updateAppUser(entity));
+        return fuelDTOConverter.toDTO(fuelService.updateFuel(entity));
     }
 
     @DeleteMapping(path = "{id}")
-    public void deleteAppUser(@PathVariable Long id)
-    {
-        appUserService.deleteAppUser(id);
+    public void deleteFuel(@PathVariable Long id) {
+        fuelService.deleteFuel(id);
     }
 }

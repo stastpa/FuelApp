@@ -6,7 +6,9 @@ import cz.cvut.fit.tjv.fuelapp.controler.dto.FuelDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FuelDTOConverter implements DTOConverter<FuelDTO, Fuel>{
 
     private final GasStationServiceInterface gasStationService;
