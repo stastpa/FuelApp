@@ -21,4 +21,8 @@ public interface GasStationServiceInterface {
     public void deleteGasStation(Long id) throws EntityNotFoundException;
 
     public List<GasStation> getGasStationsByCriteria(Date startDate, Date endDate, String city);
+
+    public void addFuelToGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException;
+
+    public void removeFuelFromGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException, IllegalArgumentException;
 }

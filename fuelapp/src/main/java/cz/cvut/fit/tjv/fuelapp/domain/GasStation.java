@@ -14,7 +14,7 @@ import java.util.List;
 public class GasStation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_gasStation")
+    @Column(name = "id_gas_station")
     private Long id;
     @Column(name = "name")
     @NotBlank
@@ -39,9 +39,22 @@ public class GasStation {
     private String phoneNumber;
 
 
-    @OneToMany(targetEntity = Fuel.class, mappedBy = "soldAtGasStation", fetch = FetchType.LAZY, orphanRemoval = true)
-    List<Fuel> fuels;
+    @ManyToMany(mappedBy = "soldAt")
+    List<Fuel> fuelsSold;
 
-    @OneToMany(mappedBy = "soldAtGasStation", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "gasStationRecord", targetEntity = Record.class, orphanRemoval = true)
     List<Record> records;
+
+
+    public GasStation() {
+    }
+    public GasStation(String name, String country, Integer psc, String city, String street, String number, String phoneNumber) {
+        this.name = name;
+        this.country = country;
+        this.psc = psc;
+        this.city = city;
+        this.street = street;
+        this.number = number;
+        this.phoneNumber = phoneNumber;
+    }
 }

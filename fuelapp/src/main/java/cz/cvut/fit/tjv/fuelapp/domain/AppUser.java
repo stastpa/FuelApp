@@ -31,4 +31,16 @@ public class AppUser {
 
     @OneToMany(targetEntity = Record.class, mappedBy = "userAuthor", fetch = FetchType.LAZY, orphanRemoval = true)
     List<Record> fuelRecords;
+
+    // Default constructor (required by JPA)
+    public AppUser() {
+    }
+
+    // Constructor with parameters
+    public AppUser(String name, String surname, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+    }
 }

@@ -20,10 +20,20 @@ public class Fuel {
     @NotBlank
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)
-    @JoinColumn(name = "soldAtGasStation")
-    GasStation soldAtGasStation;
+    @ManyToMany(targetEntity = GasStation.class)
+    @JoinTable(
+                name = "fuel_sold_at",
+                joinColumns = @JoinColumn(name = "id_gas_station"),
+                inverseJoinColumns = @JoinColumn(name = "id_fuel")
+    )
+    List<GasStation> soldAt;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "fuelRated", targetEntity = Record.class, orphanRemoval = true)
     List<Record> fuelRecords;
+
+    public Fuel() {
+    }
+    public Fuel(String name) {
+        this.name = name;
+    }
 }

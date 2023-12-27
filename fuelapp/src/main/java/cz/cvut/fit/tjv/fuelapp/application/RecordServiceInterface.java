@@ -15,4 +15,17 @@ public interface RecordServiceInterface {
     public Record updateRecord(Record record) throws IllegalArgumentException;
 
     public void deleteRecord(Long id) throws EntityNotFoundException;
+
+    public Record addRecordToGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
+
+    public Record removeRecordFromGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
+
+    public Record addRecordToAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
+
+    public Record removeRecordFromAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
+
+    public Record addRecordToFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
+
+    public Record removeRecordFromFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
+
 }

@@ -34,6 +34,18 @@ public class Record {
     AppUser userAuthor;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)
-    @JoinColumn(name = "gasStation")
-    GasStation gasStation;
+    @JoinColumn(name = "gasStationRecord")
+    GasStation gasStationRecord;
+
+
+    public Record() {
+    }
+    public Record(Float price, Date date, Integer rating, Fuel fuelRated, AppUser userAuthor, GasStation gasStationRecord) {
+        this.price = price;
+        this.date = date;
+        this.rating = rating;
+        this.fuelRated = fuelRated;
+        this.userAuthor = userAuthor;
+        this.gasStationRecord = gasStationRecord;
+    }
 }

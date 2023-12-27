@@ -2,6 +2,7 @@ package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
+import cz.cvut.fit.tjv.fuelapp.persistent.JPAGasStationRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -13,10 +14,12 @@ import java.util.List;
 public class FuelService implements FuelServiceInterface{
 
     private JPAFuelRepository fuelRepository;
+    private JPAGasStationRepository gasStationRepository;
 
-    public FuelService(JPAFuelRepository fuelRepository){
+    public FuelService(JPAFuelRepository fuelRepository, JPAGasStationRepository gasStationRepository){
 
         this.fuelRepository = fuelRepository;
+        this.gasStationRepository = gasStationRepository;
     }
     @Override
     public Fuel getFuelById(Long id) throws EntityNotFoundException {
