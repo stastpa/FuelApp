@@ -38,7 +38,7 @@ public class Record {
     GasStation gasStationRecord;
 
 
-    public Record() {
+    public Record(Long id, Float price, Date date, Integer rating, Fuel fuelById, AppUser appUserById, GasStation gasStationById) {
     }
     public Record(Float price, Date date, Integer rating, Fuel fuelRated, AppUser userAuthor, GasStation gasStationRecord) {
         this.price = price;

@@ -1,19 +1,21 @@
 package cz.cvut.fit.tjv.fuelapp.controler.dto;
 
-import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
-import cz.cvut.fit.tjv.fuelapp.domain.Record;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
+@AllArgsConstructor
 public class GasStationDTO {
-    private Long id;
-    private String name;
-    private String country;
-    private Integer psc;
-    private String city;
-    private String street;
-    private String number;
-    private String phoneNumber;
-    List<Fuel> fuelsSold;
-    List<Record> records;
+    private final Long id;
+    private final String name;
+    private final String country;
+    private final Integer psc;
+    private final String city;
+    private final String street;
+    private final String number;
+    private final String phoneNumber;
+    private final List<Long> fuelIds;
+    private final List<Long> recordIds;
 }

@@ -31,7 +31,7 @@ public class Fuel {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "fuelRated", targetEntity = Record.class, orphanRemoval = true)
     List<Record> fuelRecords;
 
-    public Fuel() {
+    public Fuel(Long id, String name, List<GasStation> soldAt, List<Record> fuelRecords) {
     }
     public Fuel(String name) {
         this.name = name;

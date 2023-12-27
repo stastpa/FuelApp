@@ -46,7 +46,7 @@ public class GasStation {
     List<Record> records;
 
 
-    public GasStation() {
+    public GasStation(Long id, String name, String country, Integer psc, String city, String street, String number, String phoneNumber, List<Record> list, List<Fuel> fuels) {
     }
     public GasStation(String name, String country, Integer psc, String city, String street, String number, String phoneNumber) {
         this.name = name;

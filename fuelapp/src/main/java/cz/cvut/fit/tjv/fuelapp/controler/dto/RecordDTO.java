@@ -1,13 +1,18 @@
 package cz.cvut.fit.tjv.fuelapp.controler.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.Date;
 
+@Getter
+@AllArgsConstructor
 public class RecordDTO {
-    private Long id;
-    private Float price;
-    private Date date;
-    private Integer rating;
-    private Long fuelRatedId;
-    private Long userAuthorId;
-    private Long gasStationRecordId;
+    private final Long id;
+    private final Float price;
+    private final Date date;
+    private final Integer rating;
+    private final Long fuelRatedId;
+    private final Long userAuthorId;
+    private final Long gasStationRecordId;
 }

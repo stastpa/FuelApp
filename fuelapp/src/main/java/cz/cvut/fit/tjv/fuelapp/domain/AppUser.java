@@ -33,7 +33,7 @@ public class AppUser {
     List<Record> fuelRecords;
 
     // Default constructor (required by JPA)
-    public AppUser() {
+    public AppUser(Long id, String name, String surname, String email, String password, List<Record> list) {
     }
 
     // Constructor with parameters
