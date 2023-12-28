@@ -37,16 +37,16 @@ public class GasStationDTOConverter implements DTOConverter<GasStationDTO, GasSt
     @Override
     public GasStation toEntity(GasStationDTO gasStationDTO) {
         return new GasStation(
-                gasStationDTO.getId(),
-                gasStationDTO.getName(),
-                gasStationDTO.getCountry(),
-                gasStationDTO.getPsc(),
-                gasStationDTO.getCity(),
-                gasStationDTO.getStreet(),
-                gasStationDTO.getNumber(),
-                gasStationDTO.getPhoneNumber(),
-                gasStationDTO.getRecordIds().stream().map(recordService::getRecordById).toList(),
-                gasStationDTO.getFuelIds().stream().map(fuelService::getFuelById).toList()
-        );
+                        gasStationDTO.getId(),
+                        gasStationDTO.getName(),
+                        gasStationDTO.getCountry(),
+                        gasStationDTO.getPsc(),
+                        gasStationDTO.getCity(),
+                        gasStationDTO.getStreet(),
+                        gasStationDTO.getNumber(),
+                        gasStationDTO.getPhoneNumber(),
+                gasStationDTO.getFuelIds().stream().map(fuelService::getFuelById).toList(),
+                gasStationDTO.getRecordIds().stream().map(recordService::getRecordById).toList()
+                );
     }
 }

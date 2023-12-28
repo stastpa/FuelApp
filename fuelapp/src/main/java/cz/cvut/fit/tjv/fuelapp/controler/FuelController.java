@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/api/appUser")
+@RequestMapping("/rest/api/fuel")
 public class FuelController {
 
     private final FuelServiceInterface fuelService;

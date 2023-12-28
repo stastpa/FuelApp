@@ -3,6 +3,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Table(name = "AppUser")
 @Getter
 @Setter
+@NoArgsConstructor
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -33,16 +35,9 @@ public class AppUser {
     List<Record> fuelRecords;
 
     public AppUser(Long id, String name, String surname, String email, String password, List<Record> list) {
-    }
-
-    public AppUser(String name, String surname, String email, String password) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
-    }
-
-    public AppUser() {
-
     }
 }

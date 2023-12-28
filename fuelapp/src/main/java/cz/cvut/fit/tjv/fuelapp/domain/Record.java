@@ -3,6 +3,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.Date;
 @Table(name = "Record")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Record {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -37,19 +39,12 @@ public class Record {
     @JoinColumn(name = "gasStationRecord")
     GasStation gasStationRecord;
 
-
-    public Record(Long id, Float price, Date date, Integer rating, Fuel fuelById, AppUser appUserById, GasStation gasStationById) {
-    }
-    public Record(Float price, Date date, Integer rating, Fuel fuelRated, AppUser userAuthor, GasStation gasStationRecord) {
+    public Record(Long id, Float price, Date date, Integer rating, Fuel fuelRated, AppUser userAuthor, GasStation gasStationRecord) {
         this.price = price;
         this.date = date;
         this.rating = rating;
         this.fuelRated = fuelRated;
         this.userAuthor = userAuthor;
         this.gasStationRecord = gasStationRecord;
-    }
-
-    public Record() {
-
     }
 }

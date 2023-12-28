@@ -11,11 +11,12 @@ import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/api/record")
+@RequestMapping("/rest/api/gasStation")
 public class GasStationController {
 
     private final GasStationServiceInterface gasStationService;
@@ -79,13 +80,13 @@ public class GasStationController {
         return gasStationService.getGasStationById(id).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
     }
     @PostMapping(path = "{id}/fuels")
-    public List<FuelDTO> addFuelSold(@PathVariable("id") Long gasStationId, @RequestBody Long recordId){
-        gasStationService.addFuelToGasStation(gasStationId, recordId);
+    public List<FuelDTO> addFuelSold(@PathVariable("id") Long gasStationId, @RequestBody Long fuelId){
+        gasStationService.addFuelToGasStation(gasStationId, fuelId);
         return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
     }
-    @DeleteMapping(path = "{gasStationId}/records/{recordId}")
-    public List<FuelDTO> removeFuelSold(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
-        gasStationService.removeFuelFromGasStation(gasStationId, recordId);
+    @DeleteMapping(path = "{gasStationId}/fuels/{fuelId}")
+    public List<FuelDTO> removeFuelSold(@PathVariable("gasStationId") Long gasStationId, @PathVariable("fuelId") Long fuelId){
+        gasStationService.removeFuelFromGasStation(gasStationId, fuelId);
         return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
     }
 

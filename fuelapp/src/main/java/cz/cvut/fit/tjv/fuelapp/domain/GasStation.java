@@ -44,11 +44,7 @@ public class GasStation {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "gasStationRecord", targetEntity = Record.class, orphanRemoval = true)
     List<Record> records;
-
-
-    public GasStation(Long id, String name, String country, Integer psc, String city, String street, String number, String phoneNumber, List<Record> list, List<Fuel> fuels) {
-    }
-    public GasStation(String name, String country, Integer psc, String city, String street, String number, String phoneNumber) {
+    public GasStation(Long id, String name, String country, Integer psc, String city, String street, String number, String phoneNumber, List<Fuel> list, List<Record> records) {
         this.name = name;
         this.country = country;
         this.psc = psc;
@@ -56,9 +52,5 @@ public class GasStation {
         this.street = street;
         this.number = number;
         this.phoneNumber = phoneNumber;
-    }
-
-    public GasStation() {
-
     }
 }
