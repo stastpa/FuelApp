@@ -65,4 +65,34 @@ public class FuelController {
     public void deleteFuel(@PathVariable Long id) {
         fuelService.deleteFuel(id);
     }
+
+    @GetMapping(path = "{id}/records")
+    public List<RecordDTO> getRecordsFromFuel(@PathVariable("id") Long id){
+        return fuelService.getFuelById(id).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @PostMapping(path = "{id}/records")
+    public List<RecordDTO> addRecordToFuel(@PathVariable("id") Long fuelId, @RequestBody Long recordId){
+        recordService.addRecordToAppuser(fuelId, recordId);
+        return fuelService.getFuelById(fuelId).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @DeleteMapping(path = "{fuelId}/records/{recordId}")
+    public List<RecordDTO> removeRecordFromFuel(@PathVariable("fuelId") Long fuelId, @PathVariable("recordId") Long recordId){
+        recordService.removeRecordFromAppuser(fuelId, recordId);
+        return fuelService.getFuelById(fuelId).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+
+    @GetMapping(path = "{id}/fuels")
+    public List<GasStationDTO> getGasStationsOfFuel(@PathVariable("id") Long id){
+        return fuelService.getFuelById(id).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
+    }
+    @PostMapping(path = "{id}/fuels")
+    public List<GasStationDTO> addGasStationToFuel(@PathVariable("id") Long gasStationId, @RequestBody Long recordId){
+        gasStationService.addFuelToGasStation(gasStationId, recordId);
+        return fuelService.getFuelById(gasStationId).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
+    }
+    @DeleteMapping(path = "{gasStationId}/records/{recordId}")
+    public List<GasStationDTO> removeGasStationFromFuel(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
+        gasStationService.removeFuelFromGasStation(gasStationId, recordId);
+        return fuelService.getFuelById(gasStationId).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
+    }
 }

@@ -3,6 +3,7 @@ package cz.cvut.fit.tjv.fuelapp.controler;
 
 import cz.cvut.fit.tjv.fuelapp.application.*;
 import cz.cvut.fit.tjv.fuelapp.controler.converter.DTOConverter;
+import cz.cvut.fit.tjv.fuelapp.controler.converter.RecordDTOConverter;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.AppUserDTO;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.FuelDTO;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationDTO;
@@ -69,5 +70,19 @@ public class AppUserController {
     public void deleteAppUser(@PathVariable Long id)
     {
         appUserService.deleteAppUser(id);
+    }
+    @GetMapping(path = "{id}/records")
+    public List<RecordDTO> getRecordsFromUser(@PathVariable("id") Long id){
+        return appUserService.getAppUserById(id).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @PostMapping(path = "{id}/records")
+    public List<RecordDTO> addRecordToUser(@PathVariable("id") Long appUserId, @RequestBody Long recordId){
+        recordService.addRecordToAppuser(appUserId, recordId);
+        return appUserService.getAppUserById(appUserId).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @DeleteMapping(path = "{appUserId}/records/{recordId}")
+    public List<RecordDTO> removeRecordFromUser(@PathVariable("appUserId") Long appUserId, @PathVariable("recordId") Long recordId){
+        recordService.removeRecordFromAppuser(appUserId, recordId);
+        return appUserService.getAppUserById(appUserId).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
     }
 }

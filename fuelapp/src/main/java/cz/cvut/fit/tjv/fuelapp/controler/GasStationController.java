@@ -67,4 +67,33 @@ public class GasStationController {
         gasStationService.deleteGasStation(id);
     }
 
+    @GetMapping(path = "{id}/records")
+    public List<RecordDTO> getRecordsFromGasStation(@PathVariable("id") Long id){
+        return gasStationService.getGasStationById(id).getRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @PostMapping(path = "{id}/records")
+    public List<RecordDTO> addRecordToGasStation(@PathVariable("id") Long gasStationId, @RequestBody Long recordId){
+        recordService.addRecordToAppuser(gasStationId, recordId);
+        return gasStationService.getGasStationById(gasStationId).getRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+    @DeleteMapping(path = "{gasStationId}/records/{recordId}")
+    public List<RecordDTO> removeRecordFromGasStation(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
+        recordService.removeRecordFromAppuser(gasStationId, recordId);
+        return gasStationService.getGasStationById(gasStationId).getRecords().stream().map(recordDTOConverter::toDTO).toList();
+    }
+
+    @GetMapping(path = "{id}/fuels")
+    public List<FuelDTO> getFuelsSold(@PathVariable("id") Long id){
+        return gasStationService.getGasStationById(id).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
+    }
+    @PostMapping(path = "{id}/fuels")
+    public List<FuelDTO> addFuelSold(@PathVariable("id") Long gasStationId, @RequestBody Long recordId){
+        gasStationService.addFuelToGasStation(gasStationId, recordId);
+        return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
+    }
+    @DeleteMapping(path = "{gasStationId}/records/{recordId}")
+    public List<FuelDTO> removeFuelSold(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
+        gasStationService.removeFuelFromGasStation(gasStationId, recordId);
+        return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
+    }
 }
