@@ -48,4 +48,8 @@ public class Record {
         this.userAuthor = userAuthor;
         this.gasStationRecord = gasStationRecord;
     }
+
+    public Record() {
+
+    }
 }

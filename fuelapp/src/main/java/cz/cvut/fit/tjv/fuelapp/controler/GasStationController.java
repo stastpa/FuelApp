@@ -11,6 +11,7 @@ import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -86,5 +87,10 @@ public class GasStationController {
     public List<FuelDTO> removeFuelSold(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
         gasStationService.removeFuelFromGasStation(gasStationId, recordId);
         return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
+    }
+
+    @GetMapping(path = "gasStations")
+    public List<GasStationDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
+        return gasStationService.getGasStationsByCriteria(startDate,endDate,city).stream().map(gasStationDTOConverter::toDTO).toList();
     }
 }

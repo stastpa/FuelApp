@@ -57,4 +57,8 @@ public class GasStation {
         this.number = number;
         this.phoneNumber = phoneNumber;
     }
+
+    public GasStation() {
+
+    }
 }
