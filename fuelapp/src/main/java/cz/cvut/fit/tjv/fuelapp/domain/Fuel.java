@@ -25,8 +25,8 @@ public class Fuel {
     @ManyToMany(targetEntity = GasStation.class)
     @JoinTable(
                 name = "fuel_sold_at",
-                joinColumns = @JoinColumn(name = "id_gas_station"),
-                inverseJoinColumns = @JoinColumn(name = "id_fuel")
+                joinColumns = @JoinColumn(name = "id_fuel"),
+                inverseJoinColumns = @JoinColumn(name = "id_gas_station")
     )
     List<GasStation> soldAt;
 

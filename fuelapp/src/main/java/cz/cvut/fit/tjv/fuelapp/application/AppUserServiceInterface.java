@@ -1,7 +1,6 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
-import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;

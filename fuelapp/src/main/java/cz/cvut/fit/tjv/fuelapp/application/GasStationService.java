@@ -1,5 +1,6 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
+import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
@@ -63,8 +64,8 @@ public class GasStationService implements GasStationServiceInterface{
     }
 
     @Override
-    public List<GasStation> getGasStationsByCriteria(Date startDate, Date endDate, String city) {
-        return gasStationRepository.findByRecordsDateBetweenAndCity(startDate, endDate, city);
+    public List<GasStationWithPriceDTO> getGasStationsByCriteria(Date startDate, Date endDate, String city) {
+        return gasStationRepository.findByRecordsDateBetweenAndCityOrderByRecordsPriceAsc(startDate, endDate, city);
     }
 
     @Override

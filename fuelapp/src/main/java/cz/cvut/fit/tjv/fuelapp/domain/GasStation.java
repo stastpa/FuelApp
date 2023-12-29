@@ -3,6 +3,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Table(name = "GasStation")
 @Getter
 @Setter
+@NoArgsConstructor
 public class GasStation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

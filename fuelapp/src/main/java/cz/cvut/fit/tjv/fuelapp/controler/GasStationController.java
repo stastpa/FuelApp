@@ -9,6 +9,9 @@ import cz.cvut.fit.tjv.fuelapp.controler.dto.RecordDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -89,7 +92,10 @@ public class GasStationController {
         gasStationService.removeFuelFromGasStation(gasStationId, fuelId);
         return gasStationService.getGasStationById(gasStationId).getFuelsSold().stream().map(fuelDTOConverter::toDTO).toList();
     }
-
+    @Operation(summary = "Gets gas stations wtih the cheapest fuel by Date and Location")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found gas stations")
+    })
     @GetMapping(path = "gasStations")
     public List<GasStationDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
         return gasStationService.getGasStationsByCriteria(startDate,endDate,city).stream().map(gasStationDTOConverter::toDTO).toList();

@@ -1,9 +1,8 @@
 package cz.cvut.fit.tjv.fuelapp.controler.dto;
 
-import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 
 import java.util.List;
 

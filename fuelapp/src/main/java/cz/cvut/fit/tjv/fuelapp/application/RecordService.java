@@ -1,6 +1,5 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
-import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserReporitory;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
