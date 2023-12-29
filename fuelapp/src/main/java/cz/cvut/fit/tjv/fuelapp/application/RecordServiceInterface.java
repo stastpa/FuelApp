@@ -6,26 +6,26 @@ import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 
 public interface RecordServiceInterface {
-    public Record getRecordById(Long id) throws EntityNotFoundException;
+    Record getRecordById(Long id) throws EntityNotFoundException;
 
-    public List<Record> getRecords();
+    List<Record> getRecords();
 
-    public Record createRecord(Record record) throws IllegalArgumentException;
+    Record createRecord(Record record) throws IllegalArgumentException;
 
-    public Record updateRecord(Record record) throws IllegalArgumentException;
+    Record updateRecord(Record record) throws IllegalArgumentException;
 
-    public void deleteRecord(Long id) throws EntityNotFoundException;
+    void deleteRecord(Long id) throws EntityNotFoundException;
 
-    public Record addRecordToGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
+    Record addRecordToGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
 
-    public Record removeRecordFromGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
+    Record removeRecordFromGasStation(Long gasStationId, Long recordId) throws IllegalArgumentException;
 
-    public Record addRecordToAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
+    Record addRecordToAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
 
-    public Record removeRecordFromAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
+    Record removeRecordFromAppuser(Long appUserId, Long recordId) throws IllegalArgumentException;
 
-    public Record addRecordToFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
+    Record addRecordToFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
 
-    public Record removeRecordFromFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
+    Record removeRecordFromFuel(Long fuelId, Long recordId) throws IllegalArgumentException;
 
 }

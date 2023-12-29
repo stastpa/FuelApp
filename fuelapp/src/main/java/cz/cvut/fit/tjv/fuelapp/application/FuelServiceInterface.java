@@ -6,13 +6,13 @@ import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 
 public interface FuelServiceInterface {
-    public Fuel getFuelById(Long id) throws EntityNotFoundException;
+    Fuel getFuelById(Long id) throws EntityNotFoundException;
 
-    public List<Fuel> getFuels();
+    List<Fuel> getFuels();
 
-    public Fuel createFuel(Fuel fuel) throws IllegalArgumentException;
+    Fuel createFuel(Fuel fuel) throws IllegalArgumentException;
 
-    public Fuel updateFuel(Fuel fuel) throws IllegalArgumentException;
+    Fuel updateFuel(Fuel fuel) throws IllegalArgumentException;
 
-    public void deleteFuel(Long id) throws EntityNotFoundException;
+    void deleteFuel(Long id) throws EntityNotFoundException;
 }

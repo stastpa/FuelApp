@@ -9,21 +9,21 @@ import java.util.Date;
 import java.util.List;
 
 public interface GasStationServiceInterface {
-    public GasStation getGasStationById(Long id) throws EntityNotFoundException;
+    GasStation getGasStationById(Long id) throws EntityNotFoundException;
 
-    public List<GasStation> getGasStations();
+    List<GasStation> getGasStations();
 
-    public List<GasStation> getGasStationsSellingFuel(Fuel fuel);
+    List<GasStation> getGasStationsSellingFuel(Fuel fuel);
 
-    public GasStation createGasStation(GasStation gasStation);
+    GasStation createGasStation(GasStation gasStation);
 
-    public GasStation updateGasStation(GasStation gasStation) throws IllegalArgumentException;
+    GasStation updateGasStation(GasStation gasStation) throws IllegalArgumentException;
 
-    public void deleteGasStation(Long id) throws EntityNotFoundException;
+    void deleteGasStation(Long id) throws EntityNotFoundException;
 
-    public List<GasStationWithPriceDTO> getGasStationsByCriteria(Date startDate, Date endDate, String city);
+    List<GasStationWithPriceDTO> getGasStationsByCriteria(Date startDate, Date endDate, String city);
 
-    public void addFuelToGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException;
+    void addFuelToGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException;
 
-    public void removeFuelFromGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException, IllegalArgumentException;
+    void removeFuelFromGasStation(Long fuelId, Long gasStationId) throws EntityNotFoundException, IllegalArgumentException;
 }
