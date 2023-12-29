@@ -5,6 +5,7 @@ import cz.cvut.fit.tjv.fuelapp.application.RecordServiceInterface;
 import cz.cvut.fit.tjv.fuelapp.controler.converter.DTOConverter;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.FuelDTO;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationDTO;
+import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO;
 import cz.cvut.fit.tjv.fuelapp.controler.dto.RecordDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
@@ -97,7 +98,10 @@ public class GasStationController {
             @ApiResponse(responseCode = "200", description = "Found gas stations")
     })
     @GetMapping(path = "gasStations")
-    public List<GasStationDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
-        return gasStationService.getGasStationsByCriteria(startDate,endDate,city).stream().map(gasStationDTOConverter::toDTO).toList();
+    public List<GasStationWithPriceDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
+        return gasStationService.getGasStationsByCriteria(startDate, endDate, city)
+                .stream()
+                .map(gs -> new GasStationWithPriceDTO(gs.getGasStation(), gs.getFuelName(), gs.getPrice()))
+                .toList();
     }
 }
