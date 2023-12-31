@@ -37,7 +37,7 @@ public class FuelService implements FuelServiceInterface{
     public Fuel updateFuel(Fuel fuel) throws IllegalArgumentException {
         if(fuelRepository.existsById(fuel.getId()))
         {
-            fuelRepository.save(fuel);
+            return fuelRepository.save(fuel);
         }
         throw new IllegalArgumentException("Fuel with given id: " + fuel.getId() + " does not exist.");
     }
@@ -48,6 +48,8 @@ public class FuelService implements FuelServiceInterface{
         {
             fuelRepository.deleteById(id);
         }
-        throw new IllegalArgumentException("Fuel with given id: " + id + " does not exist.");
+        else {
+            throw new EntityNotFoundException("Fuel with given id: " + id + " does not exist.");
+        }
     }
 }

@@ -1,4 +1,4 @@
-package cz.cvut.fit.tjv.fuelapp.controler;
+package cz.cvut.fit.tjv.fuelapp.controller;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpHeaders;

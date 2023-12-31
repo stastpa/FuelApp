@@ -19,16 +19,12 @@ public class AppUser {
     @Column(name = "id_user")
     private Long id;
     @Column(name = "name")
-    @NotBlank
     private String name;
     @Column(name = "surname")
-    @NotBlank
     private String surname;
     @Column(name = "email")
-    @NotBlank
     private String email;
     @Column(name = "password")
-    @NotBlank
     private String password;
 
     @OneToMany(targetEntity = Record.class, mappedBy = "userAuthor", fetch = FetchType.LAZY, orphanRemoval = true)

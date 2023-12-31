@@ -1,6 +1,6 @@
-package cz.cvut.fit.tjv.fuelapp.controler.converter;
+package cz.cvut.fit.tjv.fuelapp.controller.converter;
 import cz.cvut.fit.tjv.fuelapp.application.RecordServiceInterface;
-import cz.cvut.fit.tjv.fuelapp.controler.dto.AppUserDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.AppUserDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import org.springframework.stereotype.Component;

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,33 +20,26 @@ public class GasStation {
     @Column(name = "id_gas_station")
     private Long id;
     @Column(name = "name")
-    @NotBlank
     private String name;
     @Column(name = "country")
-    @NotBlank
     private String country;
     @Column(name = "psc")
-    @NotBlank
     private Integer psc;
     @Column(name = "city")
-    @NotBlank
     private String city;
     @Column(name = "street")
-    @NotBlank
     private String street;
     @Column(name = "number")
-    @NotBlank
     private String number;
     @Column(name = "phone_number")
-    @NotBlank
     private String phoneNumber;
 
 
     @ManyToMany(mappedBy = "soldAt")
-    List<Fuel> fuelsSold;
+    List<Fuel> fuelsSold = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "gasStationRecord", targetEntity = Record.class, orphanRemoval = true)
-    List<Record> records;
+    List<Record> records = new ArrayList<>();
     public GasStation(Long id, String name, String country, Integer psc, String city, String street, String number, String phoneNumber, List<Fuel> list, List<Record> records) {
         this.name = name;
         this.country = country;

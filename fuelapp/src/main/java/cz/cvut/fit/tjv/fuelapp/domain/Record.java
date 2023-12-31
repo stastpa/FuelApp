@@ -18,13 +18,10 @@ public class Record {
     @Column(name = "id_record")
     private Long id;
     @Column(name = "price")
-    @NotBlank
     private Float price;
     @Column(name = "date")
-    @NotBlank
     private Date date;
     @Column(name = "rating")
-    @NotBlank
     private Integer rating;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Fuel.class)

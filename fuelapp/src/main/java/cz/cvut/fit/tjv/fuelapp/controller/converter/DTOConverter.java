@@ -1,4 +1,4 @@
-package cz.cvut.fit.tjv.fuelapp.controler.converter;
+package cz.cvut.fit.tjv.fuelapp.controller.converter;
 
 public interface DTOConverter<DTO, Entity> {
     DTO toDTO(Entity e);

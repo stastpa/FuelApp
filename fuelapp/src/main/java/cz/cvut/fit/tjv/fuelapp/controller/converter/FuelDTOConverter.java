@@ -1,8 +1,8 @@
-package cz.cvut.fit.tjv.fuelapp.controler.converter;
+package cz.cvut.fit.tjv.fuelapp.controller.converter;
 
 import cz.cvut.fit.tjv.fuelapp.application.GasStationServiceInterface;
 import cz.cvut.fit.tjv.fuelapp.application.RecordServiceInterface;
-import cz.cvut.fit.tjv.fuelapp.controler.dto.FuelDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.FuelDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;

@@ -1,6 +1,7 @@
 package cz.cvut.fit.tjv.fuelapp.persistent;
 
-import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO;
+import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Repository
 public interface JPAGasStationRepository extends JpaRepository<GasStation, Long> {
-    @Query(value = "SELECT new cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO(gs, f.name, r.price) " +
+    @Query(value = "SELECT new cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO(gs, f.name, r.price) " +
             "FROM GasStation gs " +
             "JOIN gs.records r " +
             "JOIN r.fuelRated f " +
@@ -22,4 +23,6 @@ public interface JPAGasStationRepository extends JpaRepository<GasStation, Long>
             @Param("startDate") Date startDate,
             @Param("endDate") Date endDate,
             @Param("city") String city);
+
+    List<GasStation> findByFuelsSoldContaining(Fuel fuel);
 }

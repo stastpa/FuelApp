@@ -1,6 +1,6 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
-import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
@@ -16,9 +16,9 @@ import java.util.List;
 @Transactional
 public class GasStationService implements GasStationServiceInterface{
 
-    private JPAGasStationRepository gasStationRepository;
+    private final JPAGasStationRepository gasStationRepository;
 
-    private JPAFuelRepository fuelRepository;
+    private final JPAFuelRepository fuelRepository;
 
     public GasStationService(JPAGasStationRepository gasStationRepository, JPAFuelRepository fuelRepository){
 
@@ -37,7 +37,7 @@ public class GasStationService implements GasStationServiceInterface{
 
     @Override
     public List<GasStation> getGasStationsSellingFuel(Fuel fuel) {
-        return null;
+        return gasStationRepository.findByFuelsSoldContaining(fuel);
     }
 
     @Override
@@ -46,12 +46,12 @@ public class GasStationService implements GasStationServiceInterface{
     }
 
     @Override
-    public GasStation updateGasStation(GasStation gasStation) throws IllegalArgumentException {
+    public GasStation updateGasStation(GasStation gasStation) throws EntityNotFoundException {
         if(gasStationRepository.existsById(gasStation.getId()))
         {
-            gasStationRepository.save(gasStation);
+            return gasStationRepository.save(gasStation);
         }
-        throw new IllegalArgumentException("Gas Station with given id: " + gasStation.getId() + " does not exist.");
+        throw new EntityNotFoundException("Gas Station with given id: " + gasStation.getId() + " does not exist.");
     }
 
     @Override
@@ -60,7 +60,9 @@ public class GasStationService implements GasStationServiceInterface{
         {
             gasStationRepository.deleteById(id);
         }
-        throw new IllegalArgumentException("Gas Station with given id: " + id + " does not exist.");
+        else {
+            throw new EntityNotFoundException("Gas Station with given id: " + id + " does not exist.");
+        }
     }
 
     @Override
@@ -75,9 +77,9 @@ public class GasStationService implements GasStationServiceInterface{
                 gasStationRepository.getReferenceById(gasStationId).getFuelsSold().add(fuelRepository.getReferenceById(fuelId));
                 return;
             }
-            throw new IllegalArgumentException("Fuel with given id: " + fuelId + " does not exist.");
+            throw new EntityNotFoundException("Fuel with given id: " + fuelId + " does not exist.");
         }
-        throw new IllegalArgumentException("Gas Station with given id: " + gasStationId + " does not exist.");
+        throw new EntityNotFoundException("Gas Station with given id: " + gasStationId + " does not exist.");
     }
 
     @Override
@@ -94,8 +96,8 @@ public class GasStationService implements GasStationServiceInterface{
                 }
                throw new IllegalArgumentException("Gas station with id: " + gasStationId + " does not contain gas with id: " + fuelId);
             }
-            throw new IllegalArgumentException("Fuel with given id: " + fuelId + " does not exist.");
+            throw new EntityNotFoundException("Fuel with given id: " + fuelId + " does not exist.");
         }
-        throw new IllegalArgumentException("Gas Station with given id: " + gasStationId + " does not exist.");
+        throw new EntityNotFoundException("Gas Station with given id: " + gasStationId + " does not exist.");
     }
 }

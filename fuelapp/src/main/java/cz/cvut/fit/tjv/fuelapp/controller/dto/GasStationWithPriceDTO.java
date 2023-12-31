@@ -1,4 +1,4 @@
-package cz.cvut.fit.tjv.fuelapp.controler.dto;
+package cz.cvut.fit.tjv.fuelapp.controller.dto;
 
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import lombok.AllArgsConstructor;

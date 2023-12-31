@@ -1,10 +1,10 @@
-package cz.cvut.fit.tjv.fuelapp.controler;
+package cz.cvut.fit.tjv.fuelapp.controller;
 
 
 import cz.cvut.fit.tjv.fuelapp.application.*;
-import cz.cvut.fit.tjv.fuelapp.controler.converter.DTOConverter;
-import cz.cvut.fit.tjv.fuelapp.controler.dto.AppUserDTO;
-import cz.cvut.fit.tjv.fuelapp.controler.dto.RecordDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.converter.DTOConverter;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.AppUserDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.RecordDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
 import org.springframework.web.bind.annotation.*;

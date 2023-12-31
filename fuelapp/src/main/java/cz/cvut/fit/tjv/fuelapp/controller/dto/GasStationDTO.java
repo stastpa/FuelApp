@@ -1,4 +1,4 @@
-package cz.cvut.fit.tjv.fuelapp.controler.dto;
+package cz.cvut.fit.tjv.fuelapp.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

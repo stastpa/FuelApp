@@ -1,6 +1,6 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
-import cz.cvut.fit.tjv.fuelapp.controler.dto.GasStationWithPriceDTO;
+import cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import jakarta.persistence.EntityNotFoundException;

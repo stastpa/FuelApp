@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 public class AppUserService implements AppUserServiceInterface{
 
-    private JPAAppUserReporitory appUserRepository;
+    private final JPAAppUserReporitory appUserRepository;
 
     public AppUserService(JPAAppUserReporitory appUserRepository){
 
@@ -38,7 +38,7 @@ public class AppUserService implements AppUserServiceInterface{
     public AppUser updateAppUser(AppUser appuser) throws IllegalArgumentException {
         if(appUserRepository.existsById(appuser.getId()))
         {
-            appUserRepository.save(appuser);
+            return appUserRepository.save(appuser);
         }
         throw new IllegalArgumentException("App user with given id: " + appuser.getId() + " does not exist.");
     }
@@ -49,6 +49,8 @@ public class AppUserService implements AppUserServiceInterface{
         {
             appUserRepository.deleteById(id);
         }
-        throw new IllegalArgumentException("Record with given id: " + id + " does not exist.");
+        else {
+            throw new EntityNotFoundException("Record with given id: " + id + " does not exist.");
+        }
     }
 }
