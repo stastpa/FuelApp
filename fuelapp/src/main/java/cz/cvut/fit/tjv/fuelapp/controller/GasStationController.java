@@ -101,7 +101,7 @@ public class GasStationController {
     public List<GasStationWithPriceDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
         return gasStationService.getGasStationsByCriteria(startDate, endDate, city)
                 .stream()
-                .map(gs -> new GasStationWithPriceDTO(gs.getGasStation(), gs.getFuelName(), gs.getPrice()))
+                .map(gs -> new GasStationWithPriceDTO(gs.getGasStationName(), gs.getFuelName(), gs.getPrice()))
                 .toList();
     }
 }

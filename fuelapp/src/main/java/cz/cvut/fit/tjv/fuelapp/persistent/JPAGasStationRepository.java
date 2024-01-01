@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 public interface JPAGasStationRepository extends JpaRepository<GasStation, Long> {
-    @Query(value = "SELECT new cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO(gs, f.name, r.price) " +
+    @Query(value = "SELECT new cz.cvut.fit.tjv.fuelapp.controller.dto.GasStationWithPriceDTO(gs.name, f.name, r.price) " +
             "FROM GasStation gs " +
             "JOIN gs.records r " +
             "JOIN r.fuelRated f " +

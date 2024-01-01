@@ -1,4 +1,4 @@
 package cz.cvut.fit.tjv.fuelapp.controller;
 
-public class AppUserController {
+public class GasStationControllerTest {
 }

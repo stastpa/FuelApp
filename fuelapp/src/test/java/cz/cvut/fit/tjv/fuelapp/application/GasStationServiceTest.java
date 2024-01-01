@@ -153,8 +153,8 @@ class GasStationServiceTest {
         String city = "Test City";
 
         List<GasStationWithPriceDTO> expectedGasStationsWithPriceDTO = new ArrayList<>();
-        expectedGasStationsWithPriceDTO.add(new GasStationWithPriceDTO(new GasStation(), "Fuel1", 10.0f));
-        expectedGasStationsWithPriceDTO.add(new GasStationWithPriceDTO(new GasStation(), "Fuel2", 12.0f));
+        expectedGasStationsWithPriceDTO.add(new GasStationWithPriceDTO("1L", "Fuel1", 10.0f));
+        expectedGasStationsWithPriceDTO.add(new GasStationWithPriceDTO("2L", "Fuel2", 12.0f));
 
         when(gasStationRepository.findByRecordsDateBetweenAndCityOrderByRecordsPriceAsc(startDate, endDate, city))
                 .thenReturn(expectedGasStationsWithPriceDTO);
