@@ -29,8 +29,8 @@ public class JPAGasStationRepositoryTest {
     public void testFindByRecordsDateBetweenAndCityOrderByRecordsPriceAsc() throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        Date startDate = dateFormat.parse("2023-01-02");
-        Date endDate = dateFormat.parse("2023-01-09");
+        Date startDate = dateFormat.parse("2024-01-02");
+        Date endDate = dateFormat.parse("2024-01-09");
         String city = "Prague";
 
         List<GasStationWithPriceDTO> result = gasStationRepository

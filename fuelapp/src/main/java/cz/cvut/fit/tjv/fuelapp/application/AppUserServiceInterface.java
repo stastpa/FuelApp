@@ -2,6 +2,7 @@ package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

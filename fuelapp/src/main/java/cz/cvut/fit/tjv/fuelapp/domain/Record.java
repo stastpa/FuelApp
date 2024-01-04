@@ -2,6 +2,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Record {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -35,13 +37,4 @@ public class Record {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GasStation.class)
     @JoinColumn(name = "gasStationRecord")
     GasStation gasStationRecord;
-
-    public Record(Long id, Float price, Date date, Integer rating, Fuel fuelRated, AppUser userAuthor, GasStation gasStationRecord) {
-        this.price = price;
-        this.date = date;
-        this.rating = rating;
-        this.fuelRated = fuelRated;
-        this.userAuthor = userAuthor;
-        this.gasStationRecord = gasStationRecord;
-    }
 }

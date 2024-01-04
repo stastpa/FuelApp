@@ -6,10 +6,12 @@ import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAGasStationRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,20 +23,19 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class GasStationServiceTest {
 
-    @Mock
+    @MockBean
     private JPAGasStationRepository gasStationRepository;
 
-    @Mock
+    @MockBean
     private JPAFuelRepository fuelRepository;
 
-    @InjectMocks
+    @Autowired
     private GasStationService gasStationService;
 
-    public GasStationServiceTest() {
-        MockitoAnnotations.openMocks(this);
-    }
 
     @Test
     void getGasStationById_ExistingId_ReturnsGasStation() {

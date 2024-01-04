@@ -1,15 +1,15 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
-import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserReporitory;
+import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,14 +17,15 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+
 @SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class AppUserServiceTest {
 
-    @Mock
-    private JPAAppUserReporitory appUserRepository;
+    @MockBean
+    private JPAAppUserRepository appUserRepository;
 
-    @InjectMocks
+    @Autowired
     private AppUserService appUserService;
     @Test
     void getAppUserById_ValidId_ReturnsAppUser() {

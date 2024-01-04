@@ -1,7 +1,7 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
-import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserReporitory;
+import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAGasStationRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPARecordRepository;
@@ -16,11 +16,11 @@ import java.util.List;
 public class RecordService implements RecordServiceInterface {
     private final JPARecordRepository recordRepository;
     private final JPAGasStationRepository gasStationRepository;
-    private final JPAAppUserReporitory appUserRepository;
+    private final JPAAppUserRepository appUserRepository;
     private final JPAFuelRepository fuelRepository;
 
     public RecordService(JPARecordRepository recordRepository, JPAGasStationRepository gasStationRepository,
-                         JPAAppUserReporitory appUserRepository, JPAFuelRepository fuelRepository){
+                         JPAAppUserRepository appUserRepository, JPAFuelRepository fuelRepository){
 
         this.recordRepository = recordRepository;
         this.gasStationRepository = gasStationRepository;
@@ -47,6 +47,7 @@ public class RecordService implements RecordServiceInterface {
     public Record updateRecord(Record record) throws EntityNotFoundException {
         if(recordRepository.existsById(record.getId()))
         {
+            appUserRepository.getReferenceById(record.getUserAuthor().getId()).updateRating();
             return recordRepository.save(record);
         }
         throw new EntityNotFoundException("Record with given id: " + record.getId() + " does not exist.");
@@ -94,6 +95,7 @@ public class RecordService implements RecordServiceInterface {
             {
                 Record r1 = recordRepository.getReferenceById(recordId);
                 r1.setUserAuthor(appUserRepository.getReferenceById(appUserId));
+                appUserRepository.getReferenceById(appUserId).updateRating();
                 return r1;
             }
             throw new EntityNotFoundException("Gas station with given id: " + appUserId + " does not exist.");

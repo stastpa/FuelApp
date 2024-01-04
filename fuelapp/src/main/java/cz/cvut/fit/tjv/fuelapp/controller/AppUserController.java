@@ -27,9 +27,8 @@ public class AppUserController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping
+    @GetMapping("/appUsers")
     public List<AppUserDTO> getAppUsers(){
-
         return appUserService.getAppUsers().stream().map(appUserDTOConverter::toDTO).toList();
     }
 
@@ -42,7 +41,8 @@ public class AppUserController {
     @PostMapping
     public AppUserDTO createAppUser(@RequestBody AppUserDTO au)
     {
-        return appUserDTOConverter.toDTO(appUserService.createAppUser(appUserDTOConverter.toEntity(au)));
+        appUserService.createAppUser(appUserDTOConverter.toEntity(au));
+        return au;
     }
 
     @PutMapping(path = "{id}")

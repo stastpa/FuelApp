@@ -13,6 +13,6 @@ public class AppUserDTO {
     private final String name;
     private final String surname;
     private final String email;
-    private final String password;
+    private final Long rating;
     private final List<Long> recordIds;
 }

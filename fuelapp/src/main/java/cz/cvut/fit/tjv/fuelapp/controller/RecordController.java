@@ -20,7 +20,7 @@ public class RecordController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping
+    @GetMapping("/records")
     public List<RecordDTO> getRecords() {
         return recordService.getRecords().stream().map(recordDTOConverter::toDTO).toList();
     }
@@ -32,7 +32,8 @@ public class RecordController {
 
     @PostMapping
     public RecordDTO createRecord(@RequestBody RecordDTO recordDTO) {
-        return recordDTOConverter.toDTO(recordService.createRecord(recordDTOConverter.toEntity(recordDTO)));
+        recordService.createRecord(recordDTOConverter.toEntity(recordDTO));
+        return recordDTO;
     }
 
     @PutMapping(path = "{id}")

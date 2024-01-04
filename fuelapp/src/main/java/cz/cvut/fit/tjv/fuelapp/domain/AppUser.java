@@ -2,6 +2,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,16 +26,20 @@ public class AppUser {
     private String surname;
     @Column(name = "email")
     private String email;
-    @Column(name = "password")
-    private String password;
+    @Column(name = "rating")
+    @Transient
+    private Long rating;
 
     @OneToMany(targetEntity = Record.class, mappedBy = "userAuthor", fetch = FetchType.LAZY, orphanRemoval = true)
     List<Record> fuelRecords;
 
-    public AppUser(Long id, String name, String surname, String email, String password, List<Record> list) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
+    public void updateRating() {
+        if (fuelRecords != null) {
+            this.rating = fuelRecords.stream()
+                    .mapToLong(Record::getRating)
+                    .sum();
+        } else {
+            this.rating = 0L;
+        }
     }
 }

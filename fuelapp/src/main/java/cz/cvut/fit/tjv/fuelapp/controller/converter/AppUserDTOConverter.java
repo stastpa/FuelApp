@@ -22,7 +22,7 @@ public class AppUserDTOConverter implements DTOConverter<AppUserDTO, AppUser>{
                 a.getName(),
                 a.getSurname(),
                 a.getEmail(),
-                a.getPassword(),
+                a.getRating(),
                 a.getFuelRecords().stream().map(Record::getId).toList());
     }
     @Override
@@ -33,7 +33,7 @@ public class AppUserDTOConverter implements DTOConverter<AppUserDTO, AppUser>{
                 dto.getName(),
                 dto.getSurname(),
                 dto.getEmail(),
-                dto.getPassword(),
+                dto.getRating(),
                 dto.getRecordIds().stream().map(recordService::getRecordById).toList()
         );
     }

@@ -37,7 +37,7 @@ public class GasStationController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping
+    @GetMapping("/gasStations")
     public List<GasStationDTO> getGasStations() {
         return gasStationService.getGasStations().stream().map(gasStationDTOConverter::toDTO).toList();
     }
@@ -49,7 +49,8 @@ public class GasStationController {
 
     @PostMapping
     public GasStationDTO createGasStation(@RequestBody GasStationDTO gasStationDTO) {
-        return gasStationDTOConverter.toDTO(gasStationService.createGasStation(gasStationDTOConverter.toEntity(gasStationDTO)));
+        gasStationService.createGasStation(gasStationDTOConverter.toEntity(gasStationDTO));
+        return gasStationDTO;
     }
 
     @PutMapping(path = "{id}")
@@ -97,7 +98,7 @@ public class GasStationController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found gas stations")
     })
-    @GetMapping(path = "gasStations")
+    @GetMapping(path = "/gasStationsByCrit")
     public List<GasStationWithPriceDTO> getGasStationsByCriteria(@RequestParam ("startD") Date startDate, @RequestParam ("endD") Date endDate, @RequestParam ("city") String city){
         return gasStationService.getGasStationsByCriteria(startDate, endDate, city)
                 .stream()

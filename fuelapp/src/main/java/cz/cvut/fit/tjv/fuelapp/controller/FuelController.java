@@ -33,7 +33,7 @@ public class FuelController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping
+    @GetMapping("/fuels")
     public List<FuelDTO> getFuels() {
         return fuelService.getFuels().stream().map(fuelDTOConverter::toDTO).toList();
     }
@@ -45,7 +45,8 @@ public class FuelController {
 
     @PostMapping
     public FuelDTO createFuel(@RequestBody FuelDTO fuelDTO) {
-        return fuelDTOConverter.toDTO(fuelService.createFuel(fuelDTOConverter.toEntity(fuelDTO)));
+        fuelService.createFuel(fuelDTOConverter.toEntity(fuelDTO));
+        return fuelDTO;
     }
 
     @PutMapping(path = "{id}")
@@ -75,18 +76,18 @@ public class FuelController {
         return fuelService.getFuelById(fuelId).getFuelRecords().stream().map(recordDTOConverter::toDTO).toList();
     }
 
-    @GetMapping(path = "{id}/fuels")
+    @GetMapping(path = "{id}/gasStations")
     public List<GasStationDTO> getGasStationsOfFuel(@PathVariable("id") Long id){
         return fuelService.getFuelById(id).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
     }
-    @PostMapping(path = "{id}/fuels")
+    @PostMapping(path = "{id}/gasStations")
     public List<GasStationDTO> addGasStationToFuel(@PathVariable("id") Long gasStationId, @RequestBody Long recordId){
         gasStationService.addFuelToGasStation(gasStationId, recordId);
         return fuelService.getFuelById(gasStationId).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
     }
-    @DeleteMapping(path = "{gasStationId}/records/{recordId}")
-    public List<GasStationDTO> removeGasStationFromFuel(@PathVariable("gasStationId") Long gasStationId, @PathVariable("recordId") Long recordId){
-        gasStationService.removeFuelFromGasStation(gasStationId, recordId);
-        return fuelService.getFuelById(gasStationId).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
+    @DeleteMapping(path = "{fuelId}/gasStations/{gasStationId}")
+    public List<GasStationDTO> removeGasStationFromFuel(@PathVariable("gasStationId") Long gasStationId, @PathVariable("fuelId") Long fuelId){
+        gasStationService.removeFuelFromGasStation(fuelId, gasStationId);
+        return fuelService.getFuelById(fuelId).getSoldAt().stream().map(gasStationDTOConverter::toDTO).toList();
     }
 }

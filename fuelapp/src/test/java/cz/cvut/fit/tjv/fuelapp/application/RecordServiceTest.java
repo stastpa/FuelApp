@@ -4,16 +4,18 @@ import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
 import cz.cvut.fit.tjv.fuelapp.domain.Fuel;
 import cz.cvut.fit.tjv.fuelapp.domain.GasStation;
 import cz.cvut.fit.tjv.fuelapp.domain.Record;
-import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserReporitory;
+import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAFuelRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPAGasStationRepository;
 import cz.cvut.fit.tjv.fuelapp.persistent.JPARecordRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,26 +24,26 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+
+
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class RecordServiceTest {
 
-    @Mock
+    @MockBean
     private JPARecordRepository recordRepository;
 
-    @Mock
+    @MockBean
     private JPAGasStationRepository gasStationRepository;
 
-    @Mock
-    private JPAAppUserReporitory appUserRepository;
+    @MockBean
+    private JPAAppUserRepository appUserRepository;
 
-    @Mock
+    @MockBean
     private JPAFuelRepository fuelRepository;
 
-    @InjectMocks
+    @Autowired
     private RecordService recordService;
-
-    public RecordServiceTest() {
-        MockitoAnnotations.openMocks(this);
-    }
 
     @Test
     void getRecordById_ExistingId_ReturnsRecord() {

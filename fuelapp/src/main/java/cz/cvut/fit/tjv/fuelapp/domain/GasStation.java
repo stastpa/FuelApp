@@ -2,6 +2,7 @@ package cz.cvut.fit.tjv.fuelapp.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class GasStation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -40,13 +42,4 @@ public class GasStation {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "gasStationRecord", targetEntity = Record.class, orphanRemoval = true)
     List<Record> records = new ArrayList<>();
-    public GasStation(Long id, String name, String country, Integer psc, String city, String street, String number, String phoneNumber, List<Fuel> list, List<Record> records) {
-        this.name = name;
-        this.country = country;
-        this.psc = psc;
-        this.city = city;
-        this.street = street;
-        this.number = number;
-        this.phoneNumber = phoneNumber;
-    }
 }

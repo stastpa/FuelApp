@@ -1,7 +1,7 @@
 package cz.cvut.fit.tjv.fuelapp.application;
 
 import cz.cvut.fit.tjv.fuelapp.domain.AppUser;
-import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserReporitory;
+import cz.cvut.fit.tjv.fuelapp.persistent.JPAAppUserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -12,9 +12,9 @@ import java.util.List;
 @Transactional
 public class AppUserService implements AppUserServiceInterface{
 
-    private final JPAAppUserReporitory appUserRepository;
+    private final JPAAppUserRepository appUserRepository;
 
-    public AppUserService(JPAAppUserReporitory appUserRepository){
+    public AppUserService(JPAAppUserRepository appUserRepository){
 
         this.appUserRepository = appUserRepository;
     }
