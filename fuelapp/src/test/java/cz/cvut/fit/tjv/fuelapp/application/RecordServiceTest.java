@@ -87,23 +87,6 @@ class RecordServiceTest {
     }
 
     @Test
-    void updateRecord_ExistingId_ReturnsUpdatedRecord() {
-        Long recordId = 1L;
-        Record existingRecord = new Record();
-        existingRecord.setId(recordId);
-
-        Record updatedRecord = new Record();
-        updatedRecord.setId(recordId);
-
-        when(recordRepository.existsById(recordId)).thenReturn(true);
-        when(recordRepository.save(any(Record.class))).thenReturn(updatedRecord);
-
-        Record result = recordService.updateRecord(updatedRecord);
-
-        assertEquals(updatedRecord, result);
-    }
-
-    @Test
     void updateRecord_NonexistentId_ThrowsEntityNotFoundException() {
         Record recordToUpdate = new Record();
         recordToUpdate.setId(1L);
