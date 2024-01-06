@@ -20,7 +20,7 @@ public class RecordController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping("/records")
+    @GetMapping
     public List<RecordDTO> getRecords() {
         return recordService.getRecords().stream().map(recordDTOConverter::toDTO).toList();
     }

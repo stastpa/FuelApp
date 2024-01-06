@@ -33,7 +33,7 @@ public class FuelController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping("/fuels")
+    @GetMapping
     public List<FuelDTO> getFuels() {
         return fuelService.getFuels().stream().map(fuelDTOConverter::toDTO).toList();
     }

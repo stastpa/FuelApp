@@ -78,6 +78,6 @@ public class AppUserDTO {
                 ", email='" + email + '\'' +
                 ", rating=" + rating +
                 ", recordIds=" + recordIds +
-                '}';
+                '}' + "\n";
     }
 }

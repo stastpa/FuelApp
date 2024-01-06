@@ -37,7 +37,7 @@ public class GasStationController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping("/gasStations")
+    @GetMapping
     public List<GasStationDTO> getGasStations() {
         return gasStationService.getGasStations().stream().map(gasStationDTOConverter::toDTO).toList();
     }
