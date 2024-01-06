@@ -2,7 +2,6 @@ package cz.cvut.fit.tjv.client.service;
 
 
 import cz.cvut.fit.tjv.client.api_client.AppUserClient;
-import cz.cvut.fit.tjv.client.api_client.RecordClient;
 import cz.cvut.fit.tjv.client.model.AppUserDTO;
 import cz.cvut.fit.tjv.client.model.RecordDTO;
 import org.springframework.stereotype.Service;
@@ -24,6 +23,11 @@ public class AppUserService {
         return currentUser != null;
     }
 
+    public boolean isBanned()
+    {
+        return getAppuserById(currentUser).getRating() < -2;
+    }
+
     public void setCurrentUser(Long currentUser) {
         this.currentUser = currentUser;
         appUserClient.setCurrentUser(currentUser);
@@ -39,6 +43,10 @@ public class AppUserService {
 
     public void create(AppUserDTO data) {
         appUserClient.create(data);
+    }
+
+    public AppUserDTO getAppuserById(Long id) {
+       return appUserClient.getAppuserById(id);
     }
 
     public Collection<RecordDTO> getUsersRecords(Long id) {

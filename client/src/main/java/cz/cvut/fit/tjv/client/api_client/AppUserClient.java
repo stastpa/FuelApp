@@ -65,4 +65,13 @@ public class AppUserClient {
                 .retrieve()
                 .toBodilessEntity();
     }
+
+    public AppUserDTO getAppuserById(Long id) {
+        return appUserRestClient.get()
+                .uri("/{id}", id)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .toEntity(AppUserDTO.class)
+                .getBody();
+    }
 }

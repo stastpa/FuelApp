@@ -58,3 +58,61 @@
 1704547937210:help
 1704547947068:get-users-records
 1704547954755:get-users-records 1
+1704552404645:help
+1704552426443:get-gas-station-by-criteria
+1704552463073:help get-gas-station-by-critrteria
+1704552510539:help
+1704552519301:serch-by-date-and-city
+1704552577625:serch-by-date-and-city 2024-01-01 Prague 2024-01-10
+1704552605443:serch-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704553056643:help
+1704553080475:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704553447408:help
+1704553469217:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704553694770:public void searchByDateAndCity(String start, String end, String city) throws Exception {
+1704553717844:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704554142084:@ShellMethod("dates in format yyyy-MM-dd")
+1704554142097:public void searchByDateAndCity(String start, String end, String city) throws Exception {
+1704554324201:help
+1704554344527:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704554406440:@ShellMethod("dates in format yyyy-MM-dd")
+1704554406458:public void searchByDateAndCity(String start, String end, String city) throws Exception {
+1704554414950:}search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704554417775:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704554973573:help
+1704554987036:search-by-date-and-city SimpleDateFormat userInputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+1704555056893:search-by-date-and-city "Mon Jan 01 00:00:00 UTC 2024" "Mon Jan 10 00:00:00 UTC 2024" Prague
+1704555211231:search-by-date-and-city "Mon Jan 01 00:00:00 UTC 2024" "Mon Jan 10 00:00:00 UTC 2024"
+1704557102497:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704557324371:search-by-date-and-city 2024-01-02 2024-01-09 Prague
+1704557913730:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704558980734:help
+1704559041032:search-by-date-and-city 2024-01-01 2024-01-10 Prague
+1704559414351:help
+1704559426206:help create-record
+1704559517192:set-current-user 10
+1704559534950:create-record 40 1 1
+1704559622559:set-current-user 10
+1704559636586:create-record 40 1 1
+1704559864571:set-current-user 10
+1704559884651:create-record 40 1 1
+1704560270365:set-current-user 10
+1704560280841:create-record 40 1 1
+1704560501087:help
+1704560509959:set-current-user 10
+1704560519336:create-record 40 1 1
+1704561079806:help
+1704561089235:get-users-records 1
+1704561576559:help
+1704561597430:like-record 4
+1704561985747:help
+1704562063216:set-current-user 10
+1704562113467:dislike-record 54
+1704562506631:help
+1704562535177:set-current-user 10
+1704562671237:like-record 1
+1704563629877:set-current-user 10
+1704563635954:create-record help
+1704563641331:help create-record
+1704563658046:create-record 20 1 1
+1704563742694:help

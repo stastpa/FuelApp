@@ -2,19 +2,22 @@ package cz.cvut.fit.tjv.client.service;
 
 import cz.cvut.fit.tjv.client.api_client.GasStationClient;
 import cz.cvut.fit.tjv.client.model.GasStationWithPriceDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.Date;
 
+@Service
 public class GasStationService {
 
-        private GasStationClient gasStationClient;
+    private GasStationClient gasStationClient;
 
-        public GasStationService(GasStationClient gasStationClient) {
-            this.gasStationClient = gasStationClient;
-        }
-
-        public Collection<GasStationWithPriceDTO> getGasStationByCrirteria(Date start, Date end, String city) {
-           return gasStationClient.getGasStationByCrirteria(start, end, city);
-        }
+    public GasStationService(GasStationClient gasStationClient) {
+        this.gasStationClient = gasStationClient;
     }
+
+    public Collection<GasStationWithPriceDTO> getGasStationByCriteria(String start, String end, String city) {
+
+
+        return gasStationClient.getGasStationByCrirteria(start, end, city);
+    }
+}

@@ -1,6 +1,5 @@
 package cz.cvut.fit.tjv.client.api_client;
 
-import cz.cvut.fit.tjv.client.model.AppUserDTO;
 import cz.cvut.fit.tjv.client.model.RecordDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -24,5 +23,24 @@ public class RecordClient {
                 .body(data)
                 .retrieve()
                 .toBodilessEntity();
+    }
+
+    public void update(Long id, RecordDTO data) {
+        recordRestClient.put()
+                .uri("/{id}", id)
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(data)
+                .retrieve()
+                .toBodilessEntity();
+    }
+
+    public RecordDTO getRecordById(Long id) {
+        return recordRestClient.get()
+                .uri("/{id}", id)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .toEntity(RecordDTO.class)
+                .getBody();
     }
 }
