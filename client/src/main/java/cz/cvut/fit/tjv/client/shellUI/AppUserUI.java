@@ -84,12 +84,6 @@ public class AppUserUI {
         );
     }
 
-    @ShellMethodAvailability({"dislike-record", "like-record"})
-    public Availability isBanned() {
-        return appUserService.isBanned()
-                ? Availability.unavailable("The account has been temporarily suspended due to an excessive number of dislikes on their posted records.")
-                : Availability.available();
-    }
 
     @ShellMethodAvailability({"read-current-user", "dislikeRecord", "likeRecord"})
     public Availability isCurrentUser() {
