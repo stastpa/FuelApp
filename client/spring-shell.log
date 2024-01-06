@@ -1,1 +1,55 @@
 1704535415113:help
+1704535945217:read-all-appusers
+1704535981701:help
+1704535998895:read-all-appusers
+1704536205964:help
+1704536218945:read-all-appusers
+1704536268500:exit
+1704536527015:help
+1704536533320:read-all-appusers
+1704536866308:help
+1704536909333:help register-user
+1704536955576:register Dave Dobrik DD@email.com
+1704536989652:register-user Dave Dobrik DD@email.com
+1704537527221:help
+1704537571886:create-user David Dobrik DD
+1704537590919:register-user David Dobrik DD@e.com
+1704537833852:help
+1704537841120:read-all-users
+1704537872610:register-user DD DD DD
+1704538060588:read-all-users
+1704538095013:get-all-users
+1704538099327:help
+1704538105456:read-all-users
+1704538204935:exit
+1704538368267:help
+1704538374922:register-user
+1704538388014:register-user G G G
+1704542767472:help
+1704542775429:read-current-user
+1704543021261:read-all-users
+1704543028300:help
+1704543046579:set-current-user 1
+1704543054183:read-current-user
+1704543140620:help
+1704543147508:read-current-user
+1704543210995:help
+1704543219996:set-current-user 1
+1704543228576:read-current-user
+1704543261236:set-current-user 1
+1704543266316:read-current-user
+1704546550310:help
+1704546564936:get-users-records 1
+1704546595613:help
+1704546605327:get-users-records 1
+1704546760925:help
+1704546774139:get-users-records 1
+1704546783034:get-users-records
+1704546889832:get-users-records 1
+1704546897923:stacktrace
+1704547051418:get-users-records 1
+1704547057563:help
+1704547065444:get-users-records 2
+1704547092130:get-users-records 1
+1704547720872:get-users-records 2
+1704547728112:get-users-records 55555

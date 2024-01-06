@@ -4,12 +4,29 @@ import java.util.List;
 
 
 public class AppUserDTO {
-    private  Long id;
-    private  String name;
-    private  String surname;
-    private  String email;
-    private  Long rating;
-    private  List<Long> recordIds;
+    private Long id;
+    private String name;
+    private String surname;
+    private String email;
+    private Long rating;
+    private List<Long> recordIds;
+
+
+    public Long getRating() {
+        return rating;
+    }
+
+    public void setRating(Long rating) {
+        this.rating = rating;
+    }
+
+    public List<Long> getRecordIds() {
+        return recordIds;
+    }
+
+    public void setRecordIds(List<Long> recordIds) {
+        this.recordIds = recordIds;
+    }
 
     public AppUserDTO(Long id, String name, String surname, String email, Long rating, List<Long> recordIds) {
         this.id = id;
@@ -24,6 +41,10 @@ public class AppUserDTO {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -34,18 +55,6 @@ public class AppUserDTO {
 
     public String getEmail() {
         return email;
-    }
-
-    public Long getRating() {
-        return rating;
-    }
-
-    public List<Long> getRecordIds() {
-        return recordIds;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -60,11 +69,15 @@ public class AppUserDTO {
         this.email = email;
     }
 
-    public void setRating(Long rating) {
-        this.rating = rating;
-    }
-
-    public void setRecordIds(List<Long> recordIds) {
-        this.recordIds = recordIds;
+    @Override
+    public String toString() {
+        return "AppUserDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", rating=" + rating +
+                ", recordIds=" + recordIds +
+                '}';
     }
 }

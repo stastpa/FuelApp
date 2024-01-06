@@ -27,7 +27,7 @@ public class AppUserController {
         this.recordDTOConverter = recordDTOConverter;
     }
 
-    @GetMapping("/appUsers")
+    @GetMapping
     public List<AppUserDTO> getAppUsers(){
         return appUserService.getAppUsers().stream().map(appUserDTOConverter::toDTO).toList();
     }

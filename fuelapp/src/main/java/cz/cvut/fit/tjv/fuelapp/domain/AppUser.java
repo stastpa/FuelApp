@@ -27,7 +27,6 @@ public class AppUser {
     @Column(name = "email")
     private String email;
     @Column(name = "rating")
-    @Transient
     private Long rating;
 
     @OneToMany(targetEntity = Record.class, mappedBy = "userAuthor", fetch = FetchType.LAZY, orphanRemoval = true)

@@ -41,7 +41,7 @@ class AppUserControllerTest {
         when(appUserDTOConverter.toDTO(user1)).thenReturn(new AppUserDTO(1L, "John", "Doe", "john@example.com", 0L, null));
         when(appUserDTOConverter.toDTO(user2)).thenReturn(new AppUserDTO(2L, "Jane", "Doe", "jane@example.com", 0L, null));
 
-        mockMvc.perform(get("/rest/api/appUser/appUsers"))
+        mockMvc.perform(get("/rest/api/appUser"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").value(1))
