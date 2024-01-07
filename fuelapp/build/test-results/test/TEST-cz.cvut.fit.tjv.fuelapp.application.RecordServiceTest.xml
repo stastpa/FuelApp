@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2024-01-07T10:09:56" hostname="patrik-GL502VMZ" time="0.129">
+  <properties/>
+  <testcase name="getRecordById_NonexistentId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="addRecordToAppuser_ValidAppuserAndRecord_AddsRecordToAppuser()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="addRecordToGasStation_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="deleteRecord_ExistingId_DeletesRecord()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromFuel_RecordInFuel_RemovesRecordFromFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="getRecords_ReturnsListOfRecords()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToFuel_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="createRecord_ReturnsCreatedRecord()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromFuel_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromAppuser_RecordInAppuser_RemovesRecordFromAppuser()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromGasStation_NonexistentGasStation_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToAppuser_NonexistentAppuser_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromGasStation_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToAppuser_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="addRecordToGasStation_ValidGasStationAndRecord_AddsRecordToGasStation()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="getRecordById_ExistingId_ReturnsRecord()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToFuel_ValidFuelAndRecord_AddsRecordToFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="updateRecord_NonexistentId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToGasStation_NonexistentGasStation_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="deleteRecord_NonexistentId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.005"/>
+  <testcase name="removeRecordFromGasStation_RecordInGasStation_RemovesRecordFromGasStation()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="addRecordToFuel_NonexistentFuel_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <testcase name="removeRecordFromAppuser_NonexistentRecord_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest" time="0.004"/>
+  <system-out><![CDATA[2024-01-07T11:09:55.293+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest]: RecordServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T11:09:55.295+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2024-01-07T11:09:55.311+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Starting RecordServiceTest using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T11:09:55.311+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : No active profile set, falling back to 1 default profile: "default"
+2024-01-07T11:09:55.444+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T11:09:55.456+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 4 JPA repository interfaces.
+2024-01-07T11:09:55.553+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T11:09:55.559+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-07T11:09:55.584+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@4424285
+2024-01-07T11:09:55.584+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-07T11:09:55.639+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T11:09:55.903+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T11:09:55.904+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T11:09:55.986+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T11:09:56.100+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Started RecordServiceTest in 0.802 seconds (process running for 9.769)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

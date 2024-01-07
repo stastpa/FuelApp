@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-01-07T10:09:57" hostname="patrik-GL502VMZ" time="0.166">
+  <properties/>
+  <testcase name="testGetAppUsers()" classname="cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest" time="0.113"/>
+  <testcase name="testCreateAppUser()" classname="cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest" time="0.038"/>
+  <testcase name="testGetAppUser()" classname="cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest" time="0.007"/>
+  <testcase name="testDeleteAppUser()" classname="cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest" time="0.005"/>
+  <system-out><![CDATA[2024-01-07T11:09:56.235+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest]: AppUserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T11:09:56.248+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.controller.AppUserControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2024-01-07T11:09:56.271+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.c.AppUserControllerTest        : Starting AppUserControllerTest using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T11:09:56.271+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.c.AppUserControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2024-01-07T11:09:56.417+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T11:09:56.429+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 4 JPA repository interfaces.
+2024-01-07T11:09:56.538+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T11:09:56.542+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-01-07T11:09:56.562+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@687e94f2
+2024-01-07T11:09:56.563+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-01-07T11:09:56.611+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T11:09:56.828+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T11:09:56.828+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T11:09:57.031+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T11:09:57.147+01:00  INFO 8384 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-01-07T11:09:57.147+01:00  INFO 8384 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-01-07T11:09:57.151+01:00  INFO 8384 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-01-07T11:09:57.163+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.c.AppUserControllerTest        : Started AppUserControllerTest in 0.912 seconds (process running for 10.832)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
