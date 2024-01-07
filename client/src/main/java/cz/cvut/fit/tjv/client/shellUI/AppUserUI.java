@@ -28,7 +28,7 @@ public class AppUserUI {
         this.recordService = recordService;
     }
 
-    @ShellMethod
+    @ShellMethod("displays all users")
     public Collection<AppUserDTO> readAllUsers() {
         return appUserService.readAll();
     }
@@ -39,34 +39,34 @@ public class AppUserUI {
         return "appUser created";
     }
 
-    @ShellMethod
+    @ShellMethod("Creates new record for an existing gas station and the fuel they are selling")
     public String createRecord(Float price, Long fuelId, Long gasStationId) {
         recordService.create(new RecordDTO(null, price, new Date(), 0, fuelId, readCurrentUser().getId(), gasStationId));
         return "Record created";
     }
 
-    @ShellMethod
+    @ShellMethod("Displays current user")
     public AppUserDTO readCurrentUser() {
         return appUserService.readOne().get();
     }
 
-    @ShellMethod
+    @ShellMethod("Sets current user")
     public void setCurrentUser(Long id) {
         appUserService.setCurrentUser(id);
     }
 
-    @ShellMethod
+    @ShellMethod("Displays users records")
     public Collection<RecordDTO> getUsersRecords(Long id) {
         return appUserService.getUsersRecords(id);
     }
 
-    @ShellMethod
+    @ShellMethod("Gives like to record")
     public String likeRecord(Long id) {
         recordService.updateRating(id, 1);
         return "Thank you for your feedback";
     }
 
-    @ShellMethod
+    @ShellMethod("Gives dislike to record")
     public String dislikeRecord(Long id) {
          recordService.updateRating(id, -1);
         return "Thank you for your feedback";
@@ -74,7 +74,7 @@ public class AppUserUI {
 
 
 
-    @ShellMethod("dates in format yyyy-MM-dd") //search-by-date-and-city 2024-01-01 2024-01-10 Prague
+    @ShellMethod("filters cheapest gas station and fuel by city and date. Dates are in format yyyy-MM-dd") //search-by-date-and-city 2024-01-01 2024-01-10 Prague
     public Collection<GasStationWithPriceDTO> searchByDateAndCity(String start, String end, String city) {
 
         return gasStationService.getGasStationByCriteria(

@@ -11,7 +11,6 @@ public class ClientApplication {
         var app = new SpringApplication(ClientApplication.class);
         app.setWebApplicationType(WebApplicationType.NONE);
         app.run(args);
-        SpringApplication.run(ClientApplication.class, args);
     }
 
 }

@@ -50,7 +50,7 @@ public class RecordControllerTest {
         when(recordDTOConverter.toDTO(record1)).thenReturn(new RecordDTO(1L, 32.4f, new Date(), -4, null, null, null));
         when(recordDTOConverter.toDTO(record2)).thenReturn(new RecordDTO(2L, 32.7f, new Date(), 20, null, null, null));
 
-        mockMvc.perform(get("/rest/api/record/records"))
+        mockMvc.perform(get("/rest/api/record"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").value(1))

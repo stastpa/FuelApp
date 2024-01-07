@@ -49,7 +49,7 @@ public class GasStationControllerTest {
         when(gasStationDTOConverter.toDTO(gasStation1)).thenReturn(new GasStationDTO(1L, "Station1", "Country1", 12345, "City1", "Street1", "1A", "123456789", null, null));
         when(gasStationDTOConverter.toDTO(gasStation2)).thenReturn(new GasStationDTO(2L, "Station2", "Country2", 67890, "City2", "Street2", "2B", "987654321", null, null));
 
-        mockMvc.perform(get("/rest/api/gasStation/gasStations"))
+        mockMvc.perform(get("/rest/api/gasStation"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").value(1))

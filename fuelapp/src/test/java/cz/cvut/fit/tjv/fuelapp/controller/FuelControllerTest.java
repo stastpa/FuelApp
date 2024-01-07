@@ -44,7 +44,7 @@ public class FuelControllerTest {
         when(fuelDTOConverter.toDTO(fuel1)).thenReturn(new FuelDTO(1L, "Petrol", null,null));
         when(fuelDTOConverter.toDTO(fuel2)).thenReturn(new FuelDTO(2L, "Diesel", null, null));
 
-        mockMvc.perform(get("/rest/api/fuel/fuels"))
+        mockMvc.perform(get("/rest/api/fuel"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].id").value(1))
