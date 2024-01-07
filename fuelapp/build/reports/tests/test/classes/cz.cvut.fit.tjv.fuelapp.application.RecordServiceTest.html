@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.100s</div>
+<div class="counter">0.116s</div>
 <p>duration</p>
 </div>
 </td>
@@ -84,12 +84,12 @@
 </tr>
 <tr>
 <td class="success">addRecordToAppuser_NonexistentRecord_ThrowsEntityNotFoundException()</td>
-<td class="success">0.005s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">addRecordToAppuser_ValidAppuserAndRecord_AddsRecordToAppuser()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -104,12 +104,12 @@
 </tr>
 <tr>
 <td class="success">addRecordToFuel_ValidFuelAndRecord_AddsRecordToFuel()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">addRecordToGasStation_NonexistentGasStation_ThrowsEntityNotFoundException()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -119,22 +119,22 @@
 </tr>
 <tr>
 <td class="success">addRecordToGasStation_ValidGasStationAndRecord_AddsRecordToGasStation()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">createRecord_ReturnsCreatedRecord()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteRecord_ExistingId_DeletesRecord()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteRecord_NonexistentId_ThrowsEntityNotFoundException()</td>
-<td class="success">0.005s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -144,47 +144,47 @@
 </tr>
 <tr>
 <td class="success">getRecordById_NonexistentId_ThrowsEntityNotFoundException()</td>
-<td class="success">0.005s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getRecords_ReturnsListOfRecords()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">removeRecordFromAppuser_NonexistentRecord_ThrowsEntityNotFoundException()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">removeRecordFromAppuser_RecordInAppuser_RemovesRecordFromAppuser()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">removeRecordFromFuel_NonexistentRecord_ThrowsEntityNotFoundException()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">removeRecordFromFuel_RecordInFuel_RemovesRecordFromFuel()</td>
 <td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">removeRecordFromAppuser_NonexistentRecord_ThrowsEntityNotFoundException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">removeRecordFromAppuser_RecordInAppuser_RemovesRecordFromAppuser()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">removeRecordFromFuel_NonexistentRecord_ThrowsEntityNotFoundException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">removeRecordFromFuel_RecordInFuel_RemovesRecordFromFuel()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">removeRecordFromGasStation_NonexistentGasStation_ThrowsEntityNotFoundException()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeRecordFromGasStation_NonexistentRecord_ThrowsEntityNotFoundException()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeRecordFromGasStation_RecordInGasStation_RemovesRecordFromGasStation()</td>
-<td class="success">0.004s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -197,8 +197,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2024-01-07T11:09:55.293+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest]: RecordServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T11:09:55.295+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest
+<pre>2024-01-07T15:04:28.266+01:00  INFO 6881 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest]: RecordServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T15:04:28.267+01:00  INFO 6881 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.RecordServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -208,19 +208,19 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2024-01-07T11:09:55.311+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Starting RecordServiceTest using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
-2024-01-07T11:09:55.311+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-01-07T11:09:55.444+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T11:09:55.456+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 4 JPA repository interfaces.
-2024-01-07T11:09:55.553+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T11:09:55.559+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2024-01-07T11:09:55.584+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@4424285
-2024-01-07T11:09:55.584+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2024-01-07T11:09:55.639+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2024-01-07T11:09:55.903+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T11:09:55.904+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T11:09:55.986+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T11:09:56.100+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Started RecordServiceTest in 0.802 seconds (process running for 9.769)
+2024-01-07T15:04:28.282+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Starting RecordServiceTest using Java 17.0.9 with PID 6881 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T15:04:28.282+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-01-07T15:04:28.420+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T15:04:28.428+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2024-01-07T15:04:28.502+01:00  INFO 6881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T15:04:28.506+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-07T15:04:28.528+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@65a022e6
+2024-01-07T15:04:28.529+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-07T15:04:28.575+01:00  INFO 6881 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T15:04:28.825+01:00  INFO 6881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T15:04:28.826+01:00  INFO 6881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T15:04:28.889+01:00  WARN 6881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T15:04:29.019+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.RecordServiceTest  : Started RecordServiceTest in 0.749 seconds (process running for 9.032)
 </pre>
 </span>
 </div>
@@ -232,7 +232,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at Jan 7, 2024, 11:10:00 AM</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at Jan 7, 2024, 3:04:32 PM</p>
 </div>
 </div>
 </body>

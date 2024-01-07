@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.081s</div>
+<div class="counter">0.089s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">createAppUser_ReturnsCreatedAppUser()</td>
-<td class="success">0.041s</td>
+<td class="success">0.047s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">deleteAppUser_InvalidId_ThrowsEntityNotFoundException()</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">deleteAppUser_ValidId_DeletesAppUser()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getAppUserById_InvalidId_ThrowsEntityNotFoundException()</td>
 <td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">deleteAppUser_ValidId_DeletesAppUser()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAppUserById_InvalidId_ThrowsEntityNotFoundException()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">getAppUserById_ValidId_ReturnsAppUser()</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -122,8 +122,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2024-01-07T11:09:52.020+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.AppUserServiceTest]: AppUserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T11:09:52.029+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.AppUserServiceTest
+<pre>2024-01-07T15:04:25.384+01:00  INFO 6881 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.AppUserServiceTest]: AppUserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T15:04:25.393+01:00  INFO 6881 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.AppUserServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -133,19 +133,19 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2024-01-07T11:09:52.052+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : Starting AppUserServiceTest using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
-2024-01-07T11:09:52.052+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-01-07T11:09:52.222+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T11:09:52.233+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 4 JPA repository interfaces.
-2024-01-07T11:09:52.418+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T11:09:52.425+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-01-07T11:09:52.456+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6f823df7
-2024-01-07T11:09:52.456+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-01-07T11:09:52.507+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2024-01-07T11:09:52.725+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T11:09:52.726+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T11:09:52.967+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T11:09:53.111+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : Started AppUserServiceTest in 1.078 seconds (process running for 6.78)
+2024-01-07T15:04:25.418+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : Starting AppUserServiceTest using Java 17.0.9 with PID 6881 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T15:04:25.418+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-01-07T15:04:25.583+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T15:04:25.599+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces.
+2024-01-07T15:04:25.767+01:00  INFO 6881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T15:04:25.772+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-07T15:04:25.802+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4afdcdf6
+2024-01-07T15:04:25.802+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-07T15:04:25.851+01:00  INFO 6881 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T15:04:26.073+01:00  INFO 6881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T15:04:26.074+01:00  INFO 6881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T15:04:26.276+01:00  WARN 6881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T15:04:26.440+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.a.AppUserServiceTest           : Started AppUserServiceTest in 1.044 seconds (process running for 6.453)
 </pre>
 </span>
 </div>
@@ -157,7 +157,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at Jan 7, 2024, 11:10:00 AM</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at Jan 7, 2024, 3:04:32 PM</p>
 </div>
 </div>
 </body>

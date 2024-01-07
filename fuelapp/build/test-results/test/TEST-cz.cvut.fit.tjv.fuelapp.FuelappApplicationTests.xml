@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-07T10:09:51" hostname="patrik-GL502VMZ" time="0.147">
+<testsuite name="cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-07T14:04:25" hostname="patrik-GL502VMZ" time="0.125">
   <properties/>
-  <testcase name="contextLoads()" classname="cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests" time="0.147"/>
-  <system-out><![CDATA[11:09:47.207 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [FuelappApplicationTests]: using SpringBootContextLoader
-11:09:47.213 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-11:09:47.214 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests]: FuelappApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:09:47.235 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [FuelappApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
-11:09:47.315 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp/build/classes/java/main/cz/cvut/fit/tjv/fuelapp/FuelappApplication.class]
-11:09:47.316 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests
-11:09:47.398 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [FuelappApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-11:09:47.399 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [FuelappApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+  <testcase name="contextLoads()" classname="cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests" time="0.125"/>
+  <system-out><![CDATA[15:04:20.733 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [FuelappApplicationTests]: using SpringBootContextLoader
+15:04:20.739 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+15:04:20.739 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests]: FuelappApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:04:20.758 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [FuelappApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+15:04:20.825 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp/build/classes/java/main/cz/cvut/fit/tjv/fuelapp/FuelappApplication.class]
+15:04:20.827 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.FuelappApplicationTests
+15:04:20.913 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [FuelappApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+15:04:20.914 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [FuelappApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -19,20 +19,20 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2024-01-07T11:09:47.635+01:00  INFO 8384 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : Starting FuelappApplicationTests using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
-2024-01-07T11:09:47.637+01:00  INFO 8384 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2024-01-07T11:09:48.370+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T11:09:48.436+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
-2024-01-07T11:09:48.856+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T11:09:48.898+01:00  INFO 8384 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2024-01-07T11:09:49.131+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-07T11:09:49.314+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15e08615
-2024-01-07T11:09:49.316+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-07T11:09:49.418+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2024-01-07T11:09:50.464+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T11:09:50.474+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T11:09:51.435+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T11:09:51.847+01:00  INFO 8384 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : Started FuelappApplicationTests in 4.415 seconds (process running for 5.515)
+2024-01-07T15:04:21.151+01:00  INFO 6881 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : Starting FuelappApplicationTests using Java 17.0.9 with PID 6881 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T15:04:21.153+01:00  INFO 6881 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-01-07T15:04:21.998+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T15:04:22.069+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2024-01-07T15:04:22.484+01:00  INFO 6881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T15:04:22.520+01:00  INFO 6881 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-01-07T15:04:22.745+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-07T15:04:22.946+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19dac2d6
+2024-01-07T15:04:22.948+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-07T15:04:23.041+01:00  INFO 6881 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T15:04:23.947+01:00  INFO 6881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T15:04:23.954+01:00  INFO 6881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T15:04:24.856+01:00  WARN 6881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T15:04:25.235+01:00  INFO 6881 --- [    Test worker] c.c.f.t.fuelapp.FuelappApplicationTests  : Started FuelappApplicationTests in 4.286 seconds (process running for 5.248)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

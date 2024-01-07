@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-07T10:10:00" hostname="patrik-GL502VMZ" time="0.007">
+<testsuite name="cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-07T14:04:32" hostname="patrik-GL502VMZ" time="0.005">
   <properties/>
-  <testcase name="testHandleNonExistingEntity()" classname="cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest" time="0.004"/>
+  <testcase name="testHandleNonExistingEntity()" classname="cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest" time="0.002"/>
   <testcase name="testHandleIllegalArgument()" classname="cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest" time="0.002"/>
-  <system-out><![CDATA[2024-01-07T11:10:00.177+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest]: RestExceptionHandlerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T11:10:00.178+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest
+  <system-out><![CDATA[2024-01-07T15:04:32.474+01:00  INFO 6881 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest]: RestExceptionHandlerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T15:04:32.476+01:00  INFO 6881 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.controller.RestExceptionHandlerTest
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

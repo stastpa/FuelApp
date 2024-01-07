@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-01-07T10:09:54" hostname="patrik-GL502VMZ" time="0.051">
+<testsuite name="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-01-07T14:04:27" hostname="patrik-GL502VMZ" time="0.048">
   <properties/>
-  <testcase name="deleteFuel_ValidId_DeletesFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.008"/>
+  <testcase name="deleteFuel_ValidId_DeletesFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.007"/>
   <testcase name="deleteFuel_InvalidId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.005"/>
   <testcase name="getFuelById_ValidId_ReturnsFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.005"/>
   <testcase name="getFuels_ReturnsListOfFuels()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.005"/>
   <testcase name="updateFuel_InvalidId_ThrowsIllegalArgumentException()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.004"/>
-  <testcase name="getFuelById_InvalidId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.005"/>
+  <testcase name="getFuelById_InvalidId_ThrowsEntityNotFoundException()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.004"/>
   <testcase name="updateFuel_ValidId_ReturnsUpdatedAppUser()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.004"/>
-  <testcase name="createFuel_ReturnsCreatedFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.006"/>
-  <system-out><![CDATA[2024-01-07T11:09:53.209+01:00  INFO 8384 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest]: FuelServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-07T11:09:53.212+01:00  INFO 8384 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest
+  <testcase name="createFuel_ReturnsCreatedFuel()" classname="cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest" time="0.004"/>
+  <system-out><![CDATA[2024-01-07T15:04:26.550+01:00  INFO 6881 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest]: FuelServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-07T15:04:26.552+01:00  INFO 6881 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration cz.cvut.fit.tjv.fuelapp.FuelappApplication for test class cz.cvut.fit.tjv.fuelapp.application.FuelServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -20,19 +20,19 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2024-01-07T11:09:53.230+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : Starting FuelServiceTest using Java 17.0.9 with PID 8384 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
-2024-01-07T11:09:53.231+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : No active profile set, falling back to 1 default profile: "default"
-2024-01-07T11:09:53.396+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-07T11:09:53.407+01:00  INFO 8384 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 4 JPA repository interfaces.
-2024-01-07T11:09:53.540+01:00  INFO 8384 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-07T11:09:53.545+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-01-07T11:09:53.567+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@59929512
-2024-01-07T11:09:53.567+01:00  INFO 8384 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-01-07T11:09:53.615+01:00  INFO 8384 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2024-01-07T11:09:53.834+01:00  INFO 8384 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-01-07T11:09:53.835+01:00  INFO 8384 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-07T11:09:54.059+01:00  WARN 8384 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-07T11:09:54.192+01:00  INFO 8384 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : Started FuelServiceTest in 0.976 seconds (process running for 7.861)
+2024-01-07T15:04:26.568+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : Starting FuelServiceTest using Java 17.0.9 with PID 6881 (started by patrik in /home/patrik/Desktop/CVUT/5/TJV/semestral/bi-tjv/fuelapp)
+2024-01-07T15:04:26.569+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2024-01-07T15:04:26.696+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-07T15:04:26.706+01:00  INFO 6881 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 4 JPA repository interfaces.
+2024-01-07T15:04:26.797+01:00  INFO 6881 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-07T15:04:26.800+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-07T15:04:26.825+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@5920c4ed
+2024-01-07T15:04:26.825+01:00  INFO 6881 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-07T15:04:26.875+01:00  INFO 6881 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-01-07T15:04:27.061+01:00  INFO 6881 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-07T15:04:27.061+01:00  INFO 6881 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-07T15:04:27.216+01:00  WARN 6881 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-07T15:04:27.329+01:00  INFO 6881 --- [    Test worker] c.c.f.t.f.application.FuelServiceTest    : Started FuelServiceTest in 0.774 seconds (process running for 7.342)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
