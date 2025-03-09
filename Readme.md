@@ -8,8 +8,8 @@
 
 1. **Clone the Repository:**
     ```bash
-    git clone git@gitlab.fit.cvut.cz:stastpa8/bi-tjv.git
-    cd bi-tjv
+    git clone git@github.com:stastpa/FuelApp.git
+    cd FuelApp
     ```
 
 2. **Build and Run with Docker Compose:**
